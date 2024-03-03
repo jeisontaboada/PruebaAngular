@@ -25,6 +25,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": [],
@@ -89,10 +90,28 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "prueba-angular:build:production",
+              "serveTarget": "prueba-angular:serve:production"
+            },
+            "development": {
+              "buildTarget": "prueba-angular:build:development",
+              "serveTarget": "prueba-angular:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

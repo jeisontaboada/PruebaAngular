@@ -1,0 +1,15 @@
+{
+  "targets": {
+    "pruebaangular-dac4a": {
+      "hosting": {
+        "prueba-angular": [
+          "pruebaangular-dac4a"
+        ]
+      }
+    }
+  },
+  
+  "projects": {
+    "default": "pruebaangular-dac4a"
+  }
+}

@@ -1,0 +1,32 @@
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="custom-form">
+  <div class="form-group">
+    <label for="titulo">Título</label>
+    <input type="text" id="titulo" formControlName="titulo">
+  </div>
+  
+  <div class="form-group">
+    <label for="descripcion">Descripción</label>
+    <textarea id="descripcion" formControlName="descripcion"></textarea>
+  </div>
+  
+  <div class="form-group">
+    <label for="fechaVencimiento">Fecha de Vencimiento</label>
+    <input type="date" id="fechaVencimiento" formControlName="fechaVencimiento">
+  </div>
+  
+  <div class="form-group">
+    <label for="prioridades">Prioridades</label>
+    <select id="prioridades" formControlName="prioridades">
+      <option value="alta">Alta</option>
+      <option value="media">Media</option>
+      <option value="baja">Baja</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="etiquetas">Etiquetas</label>
+    <input type="text" id="etiquetas" formControlName="etiquetas">
+  </div>
+  
+  <button type="submit">Enviar</button>
+</form>

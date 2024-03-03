@@ -1,0 +1,11 @@
+{
+  "hosting": [
+    {
+      "target": "prueba-angular",
+      "source": ".",
+      "frameworksBackend": {
+        "region": "us-west1"
+      }
+    }
+  ]
+}

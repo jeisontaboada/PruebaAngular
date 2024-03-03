@@ -1,0 +1,58 @@
+
+<div class="demo-button-container">
+  <button mat-raised-button (click)="addData()" class="demo-button">
+    Add data
+  </button>
+  <button
+      mat-raised-button
+      [disabled]="!dataSource.length"
+      (click)="removeData()"
+      class="demo-button">
+    Remove data
+  </button>
+</div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+  <!-- Columnas de la tabla -->
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef>No.</th>
+    <td mat-cell *matCellDef="let places">{{places.position}}</td> <!-- Cambiado -->
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let places">{{places.name}}</td> <!-- Cambiado -->
+  </ng-container>
+
+  <ng-container matColumnDef="weight">
+    <th mat-header-cell *matHeaderCellDef>Weight</th>
+    <td mat-cell *matCellDef="let places">{{places.weight}}</td> <!-- Cambiado -->
+  </ng-container>
+
+  <ng-container matColumnDef="symbol">
+    <th mat-header-cell *matHeaderCellDef>Symbol</th>
+    <td mat-cell *matCellDef="let places">{{places.symbol}}</td> <!-- Cambiado -->
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row (click)="clickedRows.add(places)" [class.demo-row-is-clicked]="clickedRows.has(places)" *matRowDef="let places; columns: displayedColumns;"></tr> <!-- Cambiado -->
+</table>
+
+
+<div>
+  <h3>
+    Click Log
+  </h3>
+</div>
+
+@if (!clickedRows.size) {
+  <div>Clicked rows will be logged here</div>
+}
+
+<ul>
+  @for (clickedRow of clickedRows; track clickedRow) {
+    <li>Clicked on {{clickedRow.name}}</li>
+  }
+</ul>
+
+  
+ 
